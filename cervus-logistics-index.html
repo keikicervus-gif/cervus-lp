@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国際物流エージェント | 株式会社チェルヴス</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #2355a0;
+    --blue-dark: #1a3f7a;
+    --blue-light: #e8eef8;
+    --black: #111111;
+    --gray-dark: #333333;
+    --gray-mid: #666666;
+    --gray-light: #aaaaaa;
+    --border: #e0e0e0;
+    --bg: #ffffff;
+    --bg-off: #f7f7f7;
+    --bg-section: #f2f5fb;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--black);
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 60px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-img {
+    height: 28px;
+    width: auto;
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+  nav a {
+    color: var(--gray-dark);
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--blue); }
+
+  .btn-nav {
+    background: var(--blue) !important;
+    color: #fff !important;
+    padding: 10px 24px;
+    font-weight: 700 !important;
+    transition: background 0.2s !important;
+  }
+  .btn-nav:hover { background: var(--blue-dark) !important; }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding-top: 72px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-left {
+    padding: 100px 60px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--blue-light);
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 8px 16px;
+    margin-bottom: 32px;
+    width: fit-content;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 18px; height: 2px;
+    background: var(--blue);
+    display: block;
+  }
+
+  .hero-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(30px, 3vw, 48px);
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.5;
+    margin-bottom: 28px;
+  }
+  .hero-title em {
+    font-style: normal;
+    color: var(--blue);
+    border-bottom: 3px solid var(--blue-light);
+  }
+
+  .hero-service-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+    border-left: 4px solid var(--blue);
+    padding-left: 14px;
+  }
+    font-size: 17px;
+    color: var(--gray-mid);
+    line-height: 2;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 44px;
+  }
+  .hero-tag {
+    border: 1px solid var(--border);
+    color: var(--gray-dark);
+    padding: 8px 0;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    width: 160px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 999px;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    padding: 18px 44px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s;
+    border: 2px solid var(--blue);
+  }
+  .btn-primary:hover {
+    background: var(--blue-dark);
+    border-color: var(--blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(35,85,160,0.25);
+  }
+
+  .btn-outline {
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s;
+  }
+  .btn-outline:hover { background: var(--blue); color: #fff; }
+
+  /* ===== HERO RIGHT — 写真① ===== */
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+  }
+  .hero-right img.photo-real {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Photo placeholder */
+  .photo-ph {
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    background: #c9d6e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .photo-ph::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent, transparent 14px,
+      rgba(255,255,255,0.35) 14px, rgba(255,255,255,0.35) 15px
+    );
+  }
+  .ph-label {
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255,0.93);
+    border-left: 4px solid var(--blue);
+    padding: 18px 24px;
+    text-align: left;
+    max-width: 300px;
+  }
+  .ph-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    color: var(--blue);
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  .ph-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--black);
+    margin-top: 4px;
+  }
+  .ph-hint {
+    font-size: 12px;
+    color: var(--gray-mid);
+    margin-top: 6px;
+    line-height: 1.6;
+  }
+
+  /* ===== STATS BAR ===== */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: #fff;
+  }
+  .stat-item {
+    padding: 36px 20px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    color: var(--blue);
+    letter-spacing: 3px;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--gray-light);
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+
+  /* ===== SECTION BASE ===== */
+  .section-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(24px, 2.8vw, 38px);
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .section-desc {
+    font-size: 17px;
+    color: var(--gray-mid);
+    line-height: 2;
+    max-width: 600px;
+    font-weight: 300;
+  }
+
+  /* ===== PAIN POINTS ===== */
+  .pain-section {
+    background: var(--bg-off);
+    padding: 100px 80px;
+    text-align: center;
+  }
+  .pain-section .section-label,
+  .pain-section .section-title,
+  .pain-section .section-desc {
+    text-align: left;
+  }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 64px;
+    align-items: end;
+  }
+  .pain-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  /* 吹き出し部分 */
+  .pain-bubble {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    position: relative;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .pain-card:hover .pain-bubble {
+    box-shadow: 0 10px 36px rgba(35,85,160,0.12);
+    transform: translateY(-4px);
+  }
+  /* 吹き出しの三角 */
+  .pain-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 18px 12px 0 12px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    filter: drop-shadow(0 2px 1px rgba(0,0,0,0.06));
+  }
+  .pain-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -21px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 20px 13px 0 13px;
+    border-style: solid;
+    border-color: var(--border) transparent transparent transparent;
+    z-index: -1;
+  }
+  .pain-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.8;
+    text-align: center;
+  }
+  .pain-text em {
+    font-style: normal;
+    color: var(--blue);
+    border-bottom: 2px solid var(--blue-light);
+  }
+  /* 人物イラスト（個別画像） */
+  .pain-person {
+    margin-top: 20px;
+    width: 140px;
+    height: 140px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 16px rgba(35,85,160,0.12);
+  }
+  .pain-person-1 { background-image: url('person01.jpg'); }
+  .pain-person-2 { background-image: url('person02.jpg'); }
+  .pain-person-3 { background-image: url('person03.jpg'); }
+  .pain-person-4 { background-image: url('person04.jpg'); }
+
+  /* ===== SOLUTION ===== */
+  .solution-section {
+    background: #fff;
+    padding: 0;
+    overflow: hidden;
+  }
+  .solution-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 700px;
+  }
+  .solution-left {
+    padding: 90px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .agent-block {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--blue-light);
+    padding: 22px 28px;
+    margin: 28px 0 32px;
+    border-left: 4px solid var(--blue);
+  }
+  .agent-years {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: var(--blue);
+    letter-spacing: 2px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .agent-text {
+    font-size: 16px;
+    color: var(--gray-dark);
+    line-height: 1.8;
+    font-weight: 500;
+  }
+
+  .feature-list { list-style: none; margin-bottom: 32px; }
+  .feature-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    color: var(--gray-dark);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .feature-list li:first-child { border-top: 1px solid var(--border); }
+  .fi-icon {
+    width: 22px; height: 22px;
+    background: var(--blue);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .tools-box {
+    background: var(--bg-off);
+    padding: 20px 24px;
+    border: 1px solid var(--border);
+  }
+  .tools-box-label {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: var(--gray-light);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .tools-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tool-badge {
+    background: #fff;
+    border: 1px solid var(--border);
+    color: var(--gray-dark);
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+
+  /* Solution right — 写真② */
+  .solution-right {
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+  }
+
+  /* ===== FLOW ===== */
+  .flow-section {
+    background: var(--bg-section);
+    padding: 100px 80px;
+  }
+  .flow-steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+  .flow-step {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    padding: 40px 40px 36px;
+    position: relative;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .flow-step:hover {
+    box-shadow: 0 12px 40px rgba(35,85,160,0.1);
+    transform: translateY(-4px);
+  }
+  .flow-step-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--blue-light);
+    padding-bottom: 20px;
+  }
+  .flow-step-num {
+    width: 48px; height: 48px;
+    background: var(--blue);
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .flow-step-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.4;
+  }
+  .flow-step-body {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .flow-step-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  /* アイコンプレースホルダー */
+  .flow-icon-ph {
+    width: 100px;
+    height: 100px;
+    background: var(--blue-light);
+    border: 2px dashed var(--blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 4px;
+  }
+  .flow-icon-ph span {
+    font-size: 11px;
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .flow-step-desc {
+    font-size: 15px;
+    color: var(--gray-mid);
+    line-height: 1.9;
+  }
+  .flow-result-bar {
+    margin-top: 36px;
+    background: var(--blue);
+    color: #fff;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== DOMESTIC ===== */
+  .domestic-section {
+    background: #fff;
+    padding: 0;
+    border-top: 4px solid var(--blue);
+    overflow: hidden;
+  }
+  .domestic-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 480px;
+  }
+  .domestic-left {
+    padding: 80px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .domestic-badge {
+    display: inline-block;
+    background: var(--blue);
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 3px;
+    padding: 8px 18px;
+    margin-bottom: 24px;
+    font-weight: 700;
+  }
+  .domestic-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(22px, 2.2vw, 30px);
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .domestic-text {
+    font-size: 17px;
+    line-height: 2;
+    color: var(--gray-mid);
+    font-weight: 300;
+  }
+  /* 写真③ */
+  .domestic-right {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials-section {
+    background: var(--bg-off);
+    padding: 100px 80px;
+  }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 60px;
+  }
+  .testimonial-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+  .testimonial-card:hover {
+    box-shadow: 0 16px 50px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+  }
+
+  /* 写真④⑤ */
+  .testi-photo {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .testi-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .testimonial-body { padding: 36px 36px 32px; flex: 1; }
+  .quote-mark {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 58px;
+    color: var(--blue);
+    opacity: 0.18;
+    line-height: 0.8;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .testimonial-subtitle {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 16px;
+    padding-left: 4px;
+    border-left: 3px solid var(--blue);
+    padding-left: 10px;
+  }
+  .testimonial-text {
+    font-size: 16px;
+    line-height: 2;
+    color: var(--gray-dark);
+    margin-bottom: 28px;
+  }
+  .testimonial-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  .client-icon {
+    width: 40px; height: 40px;
+    background: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .client-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .client-detail {
+    font-size: 12px;
+    color: var(--gray-light);
+    margin-top: 3px;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    background: var(--blue);
+    padding: 120px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.07);
+    pointer-events: none;
+  }
+  .cta-inner { position: relative; z-index: 2; }
+  .cta-eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 24px;
+  }
+  .cta-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(26px, 3.5vw, 46px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .cta-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 52px;
+    font-weight: 300;
+    line-height: 1.9;
+  }
+  .btn-white {
+    display: inline-block;
+    background: #fff;
+    color: var(--blue);
+    padding: 20px 60px;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: all 0.25s;
+    border: 2px solid #fff;
+  }
+  .btn-white:hover {
+    background: transparent;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.2);
+  }
+  .cta-note {
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--black);
+    padding: 52px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-logo-img {
+    height: 22px;
+    filter: brightness(0) invert(1);
+  }
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 960px) {
+    header { padding: 0 24px; }
+    nav a:not(.btn-nav) { display: none; }
+
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 80px 24px 56px; }
+    .hero-right { min-height: 260px; }
+
+    .stats-bar { grid-template-columns: repeat(2,1fr); }
+
+    .pain-section,
+    .flow-section,
+    .testimonials-section,
+    .cta-section { padding: 72px 24px; }
+
+    .pain-grid { grid-template-columns: repeat(2,1fr); }
+
+    .solution-inner,
+    .domestic-inner { grid-template-columns: 1fr; }
+    .solution-left,
+    .domestic-left { padding: 60px 24px; }
+    .solution-right,
+    .domestic-right { min-height: 280px; }
+
+    .flow-steps { grid-template-columns: repeat(2,1fr); gap: 36px; }
+    .flow-connector { display: none; }
+
+    .testimonial-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 20px; text-align: center; padding: 40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <a href="https://cervus-tech.com/" target="_blank"><img src="cervus.webp" alt="Cervus" class="logo-img"></a>
+  <nav>
+    <a href="#solution">サービス</a>
+    <a href="#flow">ご利用開始までの流れ</a>
+    <a href="#voice">お客様の声</a>
+    <a href="#contact" class="btn-nav">無料相談する</a>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">INTERNATIONAL LOGISTICS AGENT</p>
+    <h1 class="hero-title">
+      「物流」を、<br>もっとシンプルに。
+    </h1>
+    <p class="hero-service-name">チェルヴスの国際物流エージェントサービス</p>
+    <p class="hero-desc">
+      通関業者との交渉・専門用語の通訳・コスト管理まで。<br>
+      貴社の「物流・貿易担当者」として、まるごとサポート。
+    </p>
+    <br>
+    <p style="font-size:15px; font-weight:700; color:var(--blue); letter-spacing:2px; margin-bottom:14px;">小さなチームにこそ、プロのサポートを。</p>
+    <div class="hero-tags" style="margin-bottom: 32px;">
+      <span class="hero-tag">ソロプレナー様</span>
+      <span class="hero-tag">個人事業主様</span>
+      <span class="hero-tag">小規模事業者様</span>
+      <span class="hero-tag">スタートアップ企業様</span>
+    </div>
+    <div class="hero-cta-group">
+      <a href="https://docs.google.com/forms/d/1EGWMJBq1kanIsKOnob9nZ7tTPelZaeHOQi43GUYiGNg/edit" class="btn-primary" target="_blank">無料相談はこちら</a>
+      <a href="#solution" class="btn-outline">サービス詳細 →</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="photo01.jpg" class="photo-real" alt="コンテナ港の俯瞰" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+  </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+
+
+<!-- ===== PAIN POINTS ===== -->
+<section class="pain-section" id="pain">
+  <p class="section-label">THE PROBLEM</p>
+  <h2 class="section-title">こんなお悩み、抱えていませんか？</h2>
+  <p class="section-desc">人手不足や専門知識のなさが理由で、輸出入を諦めていませんか。</p>
+  <div class="pain-grid">
+    <div class="pain-card reveal">
+      <div class="pain-bubble">
+        <p class="pain-text">輸出入を始めたいけど<br><em>自社は人員不足</em>で<br>対応できない…</p>
+      </div>
+      <div class="pain-person pain-person-1"></div>
+    </div>
+    <div class="pain-card reveal">
+      <div class="pain-bubble">
+        <p class="pain-text">通関業者に連絡したけど<br><em>専門用語が</em><br><em>理解できない</em>…</p>
+      </div>
+      <div class="pain-person pain-person-2"></div>
+    </div>
+    <div class="pain-card reveal">
+      <div class="pain-bubble">
+        <p class="pain-text"><em>追加コスト</em>が<br>かからないか不安で<br>一歩が踏み出せない…</p>
+      </div>
+      <div class="pain-person pain-person-3"></div>
+    </div>
+    <div class="pain-card reveal">
+      <div class="pain-bubble">
+        <p class="pain-text">商社を頼ると<br><em>利益がなくなってしまう</em>…</p>
+      </div>
+      <div class="pain-person pain-person-4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTION ===== -->
+<section class="solution-section" id="solution">
+  <div class="solution-inner">
+    <div class="solution-left">
+      <p class="section-label">OUR SOLUTION</p>
+      <h2 class="section-title">貿易実務20年のプロが、<br>貴社の物流をワンストップで<br>代行します。</h2>
+      <p class="section-desc">難しい手続きをすべて代行。専門用語はわかりやすく通訳し、コストも事前に明確化。貴社は本業に集中してください。</p>
+
+      <div class="agent-block">
+        <div class="agent-years">20<span style="font-size:18px">年</span></div>
+        <div class="agent-text">
+          <strong style="color:var(--blue)">貿易実務のプロ</strong>が<br>
+          貴社専任の物流・貿易部門として稼働
+        </div>
+      </div>
+
+      <ul class="feature-list">
+        <li><span class="fi-icon">✓</span>通関業者・フォワーダーの言葉をわかりやすく通訳</li>
+        <li><span class="fi-icon">✓</span>追加コストも事前に明確化、透明なコスト管理</li>
+        <li><span class="fi-icon">✓</span>輸出者・エンドユーザーとの打合せ対応も可</li>
+        <li><span class="fi-icon">✓</span>貴社の物流部門・貿易部門としてフル活用可能</li>
+      </ul>
+
+      <a href="https://docs.google.com/forms/d/1EGWMJBq1kanIsKOnob9nZ7tTPelZaeHOQi43GUYiGNg/edit" class="btn-primary" target="_blank" style="margin-top:8px; display:block; width:260px; text-align:center; white-space:nowrap;">無料相談はこちら</a>
+    </div>
+
+    <div class="solution-right">
+      <img src="photo02.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center;" alt="サービスイメージ">
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="flow-section" id="flow">
+  <p class="section-label">STEPS TO GET STARTED</p>
+  <h2 class="section-title">ご利用開始までの流れ</h2>
+
+  <div class="flow-steps">
+
+    <!-- STEP 01 -->
+    <div class="flow-step reveal">
+      <div class="flow-step-header">
+        <div class="flow-step-num">01</div>
+        <p class="flow-step-title">お問合せ</p>
+      </div>
+      <div class="flow-step-body">
+<img src="icon01.jpg" class="flow-step-icon" alt="お問合せ">
+        <p class="flow-step-desc">まずは「無料相談」ボタンを押してお問合せください</p>
+      </div>
+    </div>
+
+    <!-- STEP 02 -->
+    <div class="flow-step reveal">
+      <div class="flow-step-header">
+        <div class="flow-step-num">02</div>
+        <p class="flow-step-title">ヒアリング</p>
+      </div>
+      <div class="flow-step-body">
+<img src="icon02.jpg" class="flow-step-icon" alt="ヒアリング">
+        <p class="flow-step-desc">貴社の現状や課題についてお聞かせください</p>
+      </div>
+    </div>
+
+    <!-- STEP 03 -->
+    <div class="flow-step reveal">
+      <div class="flow-step-header">
+        <div class="flow-step-num">03</div>
+        <p class="flow-step-title">スキームご提案</p>
+      </div>
+      <div class="flow-step-body">
+<img src="icon03.jpg" class="flow-step-icon" alt="スキームご提案">
+        <p class="flow-step-desc">物流コストのお見積や改善提案、今後の進め方などをご提案いたします</p>
+      </div>
+    </div>
+
+    <!-- STEP 04 -->
+    <div class="flow-step reveal">
+      <div class="flow-step-header">
+        <div class="flow-step-num">04</div>
+        <p class="flow-step-title">ご契約</p>
+      </div>
+      <div class="flow-step-body">
+<img src="icon04.jpg" class="flow-step-icon" alt="ご契約">
+        <p class="flow-step-desc">取引基本契約を締結させて頂き、契約後すぐに業務に取り掛かります</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== DOMESTIC ===== -->
+<section class="domestic-section" id="domestic">
+  <div class="domestic-inner">
+    <div class="domestic-left">
+      <span class="domestic-badge">DOMESTIC LOGISTICS</span>
+      <h2 class="domestic-title">「国内トラックが確保できない」<br>そのお悩みにも対応します。</h2>
+      <p class="domestic-text">
+        国際物流だけではなく、国内配送のトラック手配にも対応。<br>
+        大手から地域密着型まで、国内のあらゆるトラック会社にアプローチ可能です。<br><br>
+        ECサプライチェーン構築実績もあります。<br><br>
+        <strong>物流のことなら、国内・国際問わずご相談ください。</strong>
+      </p>
+    </div>
+
+    <div class="domestic-right">
+      <img src="photo03.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center;" alt="国内物流トラック">
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials-section" id="voice">
+  <p class="section-label">CLIENT VOICE</p>
+  <h2 class="section-title">お客様の声</h2>
+  <p class="section-desc">実際にご利用いただいたお客様からの声をご紹介します。</p>
+
+  <div class="testimonial-grid">
+
+    <!-- M社 -->
+    <div class="testimonial-card reveal">
+      <div class="testi-photo">
+        <img src="photo04.jpg" alt="M社イメージ" style="width:100%;height:220px;object-fit:cover;object-position:center;">
+      </div>
+      <div class="testimonial-body">
+        <span class="quote-mark">"</span>
+        <p class="testimonial-subtitle">丸投げして納品を待つだけ</p>
+        <p class="testimonial-text">
+          欧州からの家具と建築資材の輸入手続きや国内配送でチェルヴスの国際物流エージェントサービスを利用しています。税関への問い合わせからコスト算出、実際の通関手続き〜自社への納品まで幅広く対応してくれるので、こちらは船積み書類を丸投げするだけであとは納品を待つだけ。大変助かっています。
+        </p>
+        <div class="testimonial-meta">
+          <div class="client-icon">M</div>
+          <div>
+            <p class="client-name">M 社様</p>
+            <p class="client-detail">建築会社 ・ 秋田県</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S社 -->
+    <div class="testimonial-card reveal">
+      <div class="testi-photo">
+        <img src="photo05.jpg" alt="S社イメージ" style="width:100%;height:220px;object-fit:cover;object-position:center;">
+      </div>
+      <div class="testimonial-body">
+        <span class="quote-mark">"</span>
+        <p class="testimonial-subtitle">輸出者やお客様との打合せにも対応</p>
+        <p class="testimonial-text">
+          東南アジアからのバイオマス商材を輸入でチェルヴスの国際物流エージェントを活用しています。輸入手続きから海上コンテナの運送手配まではもちろんですが、仕入先である輸出者や国内のお客様（エンドユーザー）との打合せまで対応してくれるので、当社のバイヤー兼営業マンとしても活躍してもらっています。
+        </p>
+        <div class="testimonial-meta">
+          <div class="client-icon">S</div>
+          <div>
+            <p class="client-name">S 社様</p>
+            <p class="client-detail">商社 ・ 東京都</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <p class="cta-eyebrow">START TODAY</p>
+    <h2 class="cta-title">まずは、お気軽にご相談ください。</h2>
+    <p class="cta-sub">
+      貿易・物流のお悩み、どんな小さなことでも丁寧にご対応いたします。<br>
+      
+    </p>
+    <a href="https://docs.google.com/forms/d/1EGWMJBq1kanIsKOnob9nZ7tTPelZaeHOQi43GUYiGNg/edit" class="btn-white" target="_blank">お問い合わせ・無料相談</a>
+    <p class="cta-note">通常１営業日以内にご返信いたします</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <a href="https://cervus-tech.com/" target="_blank"><img src="cervus.webp" alt="Cervus" class="footer-logo-img"></a>
+  <p class="footer-copy">Copyright 2026 © Cervus, Inc. All Rights Reserved.</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
