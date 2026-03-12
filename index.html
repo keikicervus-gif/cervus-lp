@@ -867,13 +867,75 @@
     .testimonial-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 20px; text-align: center; padding: 40px 24px; }
   }
+
+  /* ===== スマホ専用 ===== */
+  @media (max-width: 600px) {
+    /* ヘッダー */
+    header { padding: 0 16px; height: 56px; }
+    .logo-img { height: 28px; }
+    .btn-nav { padding: 8px 14px; font-size: 13px; }
+
+    /* ヒーロー */
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 48px 20px 36px; }
+    .hero-eyebrow { font-size: 10px; }
+    .hero-title { font-size: clamp(28px, 7vw, 38px) !important; }
+    .hero-service-name { font-size: 14px; }
+    .hero-desc { font-size: 14px; }
+    .hero-right { min-height: 220px; }
+    .hero-tags { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .hero-tag { width: 100%; font-size: 13px; }
+    .hero-cta-group { flex-direction: column; gap: 12px; }
+    .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+
+    /* セクション共通 */
+    .pain-section,
+    .flow-section,
+    .testimonials-section,
+    .cta-section { padding: 56px 20px; }
+    .section-title { font-size: clamp(20px, 5.5vw, 28px) !important; }
+
+    /* お悩みセクション */
+    .pain-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .pain-bubble { padding: 16px 12px; height: auto !important; }
+    .pain-text { font-size: 13px; }
+    .pain-person { width: 80px; height: 80px; margin: 12px auto 0; }
+
+    /* サービス */
+    .solution-inner,
+    .domestic-inner { grid-template-columns: 1fr; }
+    .solution-left,
+    .domestic-left { padding: 40px 20px; }
+    .solution-right,
+    .domestic-right { min-height: 200px; }
+    .fi-list { font-size: 14px; }
+
+    /* ご利用の流れ */
+    .flow-steps { grid-template-columns: 1fr; gap: 16px; }
+    .flow-step { padding: 24px 20px; }
+    .flow-step-body { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .flow-step-icon { width: 72px; height: 72px; }
+    .flow-step-title { font-size: 17px; }
+    .flow-step-desc { font-size: 14px; }
+
+    /* お客様の声 */
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .testimonial-text { font-size: 14px; }
+
+    /* CTA */
+    .cta-title { font-size: clamp(20px, 5vw, 28px) !important; }
+    .cta-desc { font-size: 14px; }
+
+    /* フッター */
+    footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 20px; }
+  }
 </style>
 </head>
 <body>
 
 <!-- ===== HEADER ===== -->
 <header>
-  <a href="https://cervus-tech.com/" target="_blank"><img src="cervus.webp" alt="Cervus" class="logo-img"></a>
+  <a href="https://cervus-tech.com/" target="_blank"><img src="https://cervus-tech.com/wp-content/uploads/2024/12/cervus-1.webp" alt="Cervus" class="logo-img"></a>
   <nav>
     <a href="#solution">サービス</a>
     <a href="#flow">ご利用開始までの流れ</a>
@@ -909,7 +971,7 @@
   </div>
 
   <div class="hero-right">
-    <img src="photo01.jpg" class="photo-real" alt="コンテナ港の俯瞰" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+    <img src="https://cervus-tech.com/wp-content/uploads/2024/12/photo01.jpg" class="photo-real" alt="コンテナ港の俯瞰" style="width:100%;height:100%;object-fit:cover;object-position:center;">
   </div>
 </section>
 
@@ -976,7 +1038,7 @@
     </div>
 
     <div class="solution-right">
-      <img src="photo02.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center;" alt="サービスイメージ">
+      <img src="https://cervus-tech.com/wp-content/uploads/2024/12/photo02.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center;" alt="サービスイメージ">
     </div>
   </div>
 </section>
@@ -995,7 +1057,7 @@
         <p class="flow-step-title">お問合せ</p>
       </div>
       <div class="flow-step-body">
-<img src="icon01.jpg" class="flow-step-icon" alt="お問合せ">
+<img src="https://cervus-tech.com/wp-content/uploads/2024/12/icon01.jpg" class="flow-step-icon" alt="お問合せ">
         <p class="flow-step-desc">まずは「無料相談」ボタンを押してお問合せください</p>
       </div>
     </div>
@@ -1007,7 +1069,7 @@
         <p class="flow-step-title">ヒアリング</p>
       </div>
       <div class="flow-step-body">
-<img src="icon02.jpg" class="flow-step-icon" alt="ヒアリング">
+<img src="https://cervus-tech.com/wp-content/uploads/2024/12/icon02.jpg" class="flow-step-icon" alt="ヒアリング">
         <p class="flow-step-desc">貴社の現状や課題についてお聞かせください</p>
       </div>
     </div>
@@ -1019,7 +1081,7 @@
         <p class="flow-step-title">スキームご提案</p>
       </div>
       <div class="flow-step-body">
-<img src="icon03.jpg" class="flow-step-icon" alt="スキームご提案">
+<img src="https://cervus-tech.com/wp-content/uploads/2024/12/icon03.jpg" class="flow-step-icon" alt="スキームご提案">
         <p class="flow-step-desc">物流コストのお見積や改善提案、今後の進め方などをご提案いたします</p>
       </div>
     </div>
@@ -1031,7 +1093,7 @@
         <p class="flow-step-title">ご契約</p>
       </div>
       <div class="flow-step-body">
-<img src="icon04.jpg" class="flow-step-icon" alt="ご契約">
+<img src="https://cervus-tech.com/wp-content/uploads/2024/12/icon04.jpg" class="flow-step-icon" alt="ご契約">
         <p class="flow-step-desc">取引基本契約を締結させて頂き、契約後すぐに業務に取り掛かります</p>
       </div>
     </div>
@@ -1054,7 +1116,7 @@
     </div>
 
     <div class="domestic-right">
-      <img src="photo03.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center;" alt="国内物流トラック">
+      <img src="https://cervus-tech.com/wp-content/uploads/2024/12/photo03.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center;" alt="国内物流トラック">
     </div>
   </div>
 </section>
@@ -1070,7 +1132,7 @@
     <!-- M社 -->
     <div class="testimonial-card reveal">
       <div class="testi-photo">
-        <img src="photo04.jpg" alt="M社イメージ" style="width:100%;height:220px;object-fit:cover;object-position:center;">
+        <img src="https://cervus-tech.com/wp-content/uploads/2024/12/photo04.jpg" alt="M社イメージ" style="width:100%;height:220px;object-fit:cover;object-position:center;">
       </div>
       <div class="testimonial-body">
         <span class="quote-mark">"</span>
@@ -1091,7 +1153,7 @@
     <!-- S社 -->
     <div class="testimonial-card reveal">
       <div class="testi-photo">
-        <img src="photo05.jpg" alt="S社イメージ" style="width:100%;height:220px;object-fit:cover;object-position:center;">
+        <img src="https://cervus-tech.com/wp-content/uploads/2024/12/photo05.jpg" alt="S社イメージ" style="width:100%;height:220px;object-fit:cover;object-position:center;">
       </div>
       <div class="testimonial-body">
         <span class="quote-mark">"</span>
@@ -1128,7 +1190,7 @@
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <a href="https://cervus-tech.com/" target="_blank"><img src="cervus.webp" alt="Cervus" class="footer-logo-img"></a>
+  <a href="https://cervus-tech.com/" target="_blank"><img src="https://cervus-tech.com/wp-content/uploads/2024/12/cervus-1.webp" alt="Cervus" class="footer-logo-img"></a>
   <p class="footer-copy">Copyright 2026 © Cervus, Inc. All Rights Reserved.</p>
 </footer>
 
